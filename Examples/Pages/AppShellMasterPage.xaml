@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examples.Pages.AppShellMasterPage"
+             Title="Menu">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="I did it!" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <Label Text="DetailPage:"/>
+            <Button Text="Plain Detail" Command="{Binding DetailButtonCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
