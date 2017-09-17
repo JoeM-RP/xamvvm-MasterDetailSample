@@ -13,11 +13,6 @@ namespace Examples
             var factory = new XamvvmFormsFactory(this);
             XamvvmCore.SetCurrentFactory(factory);
 
-            factory.RegisterNavigationPage<AppShellNavigationPageModel>(() => this.GetPageFromCache<MainPageModel>());
-            factory.RegisterMasterDetail<AppShellModel>(
-                () => this.GetPageFromCache<AppShellMasterPageModel>(),
-                () => this.GetPageFromCache<AppShellNavigationPageModel>());
-
             MainPage = this.GetPageFromCache<AppShellModel>() as Page;
         }
 

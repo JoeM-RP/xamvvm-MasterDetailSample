@@ -1,24 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Examples.DemoListViewPage">
-  <ContentPage.Content>
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-
-      <ListView ItemsSource="{Binding DogViewModelList}" HasUnevenRows="True">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-          
-            <ViewCell>
-              <StackLayout HorizontalOptions="Start" >
-                <Label x:Name="Name"  Text="{Binding Name}"  TextColor="Navy" FontSize="20"/>
-                <Label x:Name="Race" Text="{Binding Race}"/>
-              </StackLayout>
-            </ViewCell>
-            
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-    </StackLayout>
-  </ContentPage.Content>
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Examples.DemoListViewPage" Title="Dogs I Want to Pet">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+            <ListView ItemsSource="{Binding DogViewModelList}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="Start">
+                                <Label x:Name="Name" Text="{Binding Name}" TextColor="Navy" FontSize="20" />
+                                <Label x:Name="Race" Text="{Binding Race}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Navigate Deeper" Command="{Binding NavigateCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

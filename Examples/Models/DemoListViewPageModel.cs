@@ -1,5 +1,7 @@
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 using Xamvvm;
+using Xamarin.Forms;
 
 namespace Examples
 {
@@ -11,6 +13,8 @@ namespace Examples
             set { SetField(value); }
         }
 
+        public ICommand NavigateCommand { get; set; }
+
         public DemoListViewPageModel()
         {
             DogViewModelList = new ObservableCollection<DogsItemViewModel>();
@@ -19,6 +23,8 @@ namespace Examples
             DogViewModelList.Add(new DogsItemViewModel() { Name = "Barney", Race = "Poodle" });
             DogViewModelList.Add(new DogsItemViewModel() { Name = "Jimmy", Race = "Beagle" });
             DogViewModelList.Add(new DogsItemViewModel() { Name = "Rob", Race = "Labrador" });
+
+            NavigateCommand = BaseCommand.FromTask(_ => this.PushPageAsNewInstanceAsync<DetailPageModel>(vm => vm.Init("Goldenrod", Color.Goldenrod)));
         }
     }
 

@@ -13,7 +13,6 @@ namespace Examples
 			WelcomeText = "Welcome to xamvvm!";
 
 			DetailButtonCommand = BaseCommand.FromTask<string>((param) => DetailButtonCommandExecute(param));
-			DemoListButtonCommand = BaseCommand.FromTask((param) => this.PushPageFromCacheAsync<DemoListViewPageModel>());
 		}
 
 		async Task DetailButtonCommandExecute(string param)
@@ -41,12 +40,6 @@ namespace Examples
 		}
 
 		public ICommand DetailButtonCommand
-		{
-			get { return GetField<ICommand>(); }
-			set { SetField(value); }
-		}
-
-		public ICommand DemoListButtonCommand
 		{
 			get { return GetField<ICommand>(); }
 			set { SetField(value); }
